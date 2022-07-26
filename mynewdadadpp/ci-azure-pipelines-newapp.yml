@@ -64,6 +64,9 @@ stages:
 # - stage: TestDeployment
 #   jobs:
 #   - job: PublishTheCode
+#     variables:
+#     - group: myYAML-Demos
+
 #     steps:
 #     - task: DownloadBuildArtifacts@0
 #       inputs:
@@ -75,8 +78,8 @@ stages:
 #     - task: AzureResourceManagerTemplateDeployment@3
 #       inputs:
 #         deploymentScope: 'Resource Group'
-#         azureResourceManagerConnection: 'FY20-ImaDemo (b8c7d821-4fbb-4089-8978-b966512a6a45)'
-#         subscriptionId: 'b8c7d821-4fbb-4089-8978-b966512a6a45'
+#         azureResourceManagerConnection: '$(AzSPN)'
+#         subscriptionId: '$(AzSub)'
 #         action: 'Create Or Update Resource Group'
 #         resourceGroupName: 'lz-yaml'
 #         location: 'Central US'
